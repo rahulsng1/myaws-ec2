@@ -1,5 +1,5 @@
 resource "aws_instance" "my-test-instance" {
-  ami             = "${data.aws_ami.ubuntu.id}"
+  ami             = "${data.aws_ami.centos.id}"
   instance_type   = "t2.micro"
   key_name = "${aws_key_pair.my_aws_key.key_name}"
 

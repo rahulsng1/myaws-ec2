@@ -1,9 +1,14 @@
-data "aws_ami" "ubuntu" {
+data "aws_ami" "centos" {
+  owners      = ["679593333241"]
   most_recent = true
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
+    values = ["CentOS Linux 7 x86_64 HVM *"]
+  }
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
   }
 
   filter {
@@ -11,5 +16,4 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"] # Canonical
 }
